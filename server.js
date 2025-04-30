@@ -17,8 +17,12 @@ connectDB();
 
 const app = express();
 
-// Enable CORS
-app.use(cors()); // Add options here if needed for specific origins
+// Enable CORS for specific origin (Netlify frontend)
+const corsOptions = {
+  origin: 'https://thing-s-for-rent-fronted.netlify.app',
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+};
+app.use(cors(corsOptions));
 
 // Middleware for parsing JSON bodies
 app.use(express.json());
