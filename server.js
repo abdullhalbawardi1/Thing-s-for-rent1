@@ -19,7 +19,7 @@ const app = express();
 
 // Enable CORS for specific origin (Netlify frontend)
 const corsOptions = {
-  origin: 'https://thing-s-for-rent-fronted.netlify.app',
+  origin: 'https://thingsforrent.netlify.app', // Corrected Netlify origin
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
 app.use(cors(corsOptions));
@@ -48,5 +48,3 @@ const PORT = process.env.PORT || 5000;
 app.listen(
     PORT,
     console.log(`Server running in ${process.env.NODE_ENV || 'development'} mode on port ${PORT}`)
-);
-
